@@ -53,6 +53,15 @@ export class PeliculasService {
     // Carga la pelicula
     return this.httpClient.get<Pelicula []>(url);
   }
+  /**
+   * Obtiene películas por su descripción
+   */
+    getPeliculasPorDescripcion(descripcion: string): Observable<Pelicula[]> {
+      const url: string = `${this.peliculasUrl}?descripcion=${descripcion}`;
+  
+      // Carga las películas que coinciden con la descripción
+      return this.httpClient.get<Pelicula[]>(url);
+    }
 
   /**
    * Agrega una pelicula a la base de datos
@@ -102,9 +111,10 @@ export class PeliculasService {
     return this.httpClient.get<Pelicula[]>(url);
   }
   // Método para ordenar de manera ascendente o descendente por los campos de un select
-  ordenarPeliculas(campo: string, orden: string): Observable<Pelicula[]> {
-    const url = `${this.peliculasUrl}?_sort=${campo}&_order=${orden}`;
+  ordenarPeliculas(campo: string, orden: string, inicio: number = 0, cantidad: number = 10): Observable<Pelicula[]> {
+    const url = `${this.peliculasUrl}?_sort=${campo}&_order=${orden}&_start=${inicio}&_limit=${cantidad}`;
     return this.httpClient.get<Pelicula[]>(url);
-  }
+}
+
   
 }

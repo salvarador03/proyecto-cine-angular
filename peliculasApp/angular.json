@@ -30,6 +30,8 @@
               "src/styles.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"              
             ]
           },
@@ -70,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "contactosApp:build:production"
+              "browserTarget": "contactosApp:build:production"
             },
             "development": {
-              "buildTarget": "contactosApp:build:development"
+              "browserTarget": "contactosApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "contactosApp:build"
+            "browserTarget": "contactosApp:build"
           }
         },
         "test": {
@@ -106,6 +108,6 @@
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "a8e0acac-b710-4c67-aa28-c30b90be7a83"
   }
 }

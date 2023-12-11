@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, tap } from 'rxjs';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { ValidacionService } from 'src/app/shared/services/validacion.service';
+import { ValidacionTituloService } from '../../validators/validacion-titulo.service'; // Asegúrate de tener la ruta correcta
 import { PeliculasService } from '../../services/peliculas.service';
 import { Pelicula } from 'src/app/peliculas/interfaces/pelicula.interface';
+import { ValidacionDescripcionService } from '../../validators/validacion-descripcion.service';
 
 @Component({
   selector: 'app-editar',
@@ -13,73 +15,64 @@ import { Pelicula } from 'src/app/peliculas/interfaces/pelicula.interface';
 })
 export class EditarComponent {
 
-  formulario: FormGroup;
+  formulario!: FormGroup; // Este operador le indica a TypeScript que la variable se inicializará de manera definitiva, aunque no sea directamente en el constructor.
   // Indica si la tarea se está actualizando
   actualizando: boolean = false;
 
   // Defino campos sueltos auxiliares que voy a utilizar
   // En este caso utilizo este para el datalist aunque en este caso
   // lo podría meter dentro del formulario ya que no va a afectar al funcionamiento.
-  nombreInformador    : FormControl = this.fb.control('', Validators.required);
+  nombreInformador: FormControl = this.fb.control('', Validators.required);
 
   // Estos arrays contendrán los elementos que voy a cargar en los selects
-  //selectInformador    : EntradaSelect[] = [];
-  //selectAsignado      : EntradaSelect[] = [];
-  //selectTiposTarea    : EntradaSelect[] = [];
-  //selectEstadosTarea  : EntradaSelect[] = [];
+  // selectInformador    : EntradaSelect[] = [];
+  // selectAsignado      : EntradaSelect[] = [];
+  // selectTiposTarea    : EntradaSelect[] = [];
+  // selectEstadosTarea  : EntradaSelect[] = [];
 
-
- 
   //-------------------------------------------------------------------------------------
   // Inicialización
   //-------------------------------------------------------------------------------------
-    
   constructor(
+    private activatedRoute: ActivatedRoute,
+    private fb: FormBuilder,
+    private router: Router,
+    private dialogService: DialogService,
+    private peliculasService: PeliculasService,
+    private validacionService: ValidacionService,
+    private validacionTituloService: ValidacionTituloService,
+    private validacionDescripcionService: ValidacionDescripcionService,
 
-    private activatedRoute    : ActivatedRoute,
-    private fb                : FormBuilder,
-    private router            : Router,
-    private dialogService     : DialogService,
-    private peliculasService  : PeliculasService,
-    private validacionService       : ValidacionService,
-    //private validacionTituloService : ValidacionTituloService
-
+    // private validacionTituloService: ValidacionTituloService
   ) { 
-    this.formulario = this.fb.group({
-      id: [null],
-      titulo: ['', Validators.required],
-      genero: [''],
-      ano: ['', Validators.required],
-      director: ['', Validators.required],
-      descripcion: [''],
-      precio: ['', Validators.required],
-      descuento: ['']
-    });
+    this.inicializarFormulario();
   }
 
-  /**
-   * Inicialización de la página
-   */
-  ngOnInit(): void {
+  private inicializarFormulario(): void {
+    this.formulario = this.fb.group({
+      id: [null],
+      titulo: ['', {
+        validators: [Validators.required, this.validacionService.validarEmpiezaMayuscula]
+      }],
+      genero: ['', [Validators.required, this.validacionService.validarEmpiezaMayuscula]],
+      ano: ['', [Validators.required, this.validacionService.validarAnoCuatroDigitos]],
+      director: ['', [Validators.required, this.validacionService.validarEmpiezaMayuscula]],
+      descripcion: ['', {
+        validators: [Validators.required, this.validacionService.validarEmpiezaMayuscula]
+      }],
+      precio: ['', Validators.required],
+      descuento: ['']
+    }, { validators: this.validarPrecioDescuento });
+  }
 
-    // Si no estamos en modo edición, sale de aquí
-    if(this.router.url.includes('editar')) {    
+  ngOnInit(): void {
+    if (this.router.url.includes('editar')) {
       this.cargarPelicula();
       this.actualizando = true;
-
-      // Se carga la validación asíncrona en caso de edición
-      // TODO arreglar par que funcione guardar nombre que existe
-      // this.formulario.get('titulo')?.clearAsyncValidators();
+      // Aquí podrían ir otros procesos de inicialización relacionados con la edición
     }
-
-    // Carga el contenido de los selects desde la base de datos
+    // Carga de contenido adicional, como los valores de los selects
     // this.cargarSelectTiposContacto();
-
-    // Cuando se selecciona un tipo de tarea, se debe cargar el combo de 
-    // estados para que contenga los estados para ese tipo de tarea
-    //this.formulario.get('id_tipo_tarea')?.valueChanges.subscribe(id_tipo_tarea => {      
-    //  this.cargarSelectEstados(id_tipo_tarea);
-    //});  
   }
 
 
@@ -270,5 +263,16 @@ export class EditarComponent {
         }
       );
   }
+  validarPrecioDescuento(control: AbstractControl): ValidationErrors | null {
+    const precio = control.get('precio')?.value;
+    const descuento = control.get('descuento')?.value;
+  
+    if (precio != null && descuento != null && descuento > precio) {
+      // Devuelve un objeto de error si el descuento es mayor que el precio
+      return { 'descuentoInvalido': true };
+    }
+    return null; // No hay error
+  }
+  
 
 }

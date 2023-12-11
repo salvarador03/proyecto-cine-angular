@@ -52,10 +52,14 @@
             <div class="mb-3">
                 <label for="descuento" class="form-label">Descuento (%)</label>
                 <input formControlName="descuento" type="number" id="descuento" class="form-control">
-                <div *ngIf="esCampoNoValido('descuento')" class="invalid-feedback d-block">
-                    {{ mensajeErrorCampo('descuento') }}
+                <div *ngIf="formulario.hasError('descuentoInvalido')" class="invalid-feedback d-block">
+                  El descuento no puede ser mayor que el precio.
                 </div>
-            </div>
+                <div *ngIf="esCampoNoValido('descuento')" class="invalid-feedback d-block">
+                  {{ mensajeErrorCampo('descuento') }}
+                </div>
+              </div>
+              
 
             <div class="row mt-4">
                 <div class="col-12 d-flex justify-content-end">

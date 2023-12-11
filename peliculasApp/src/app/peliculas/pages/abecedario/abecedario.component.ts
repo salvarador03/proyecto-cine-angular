@@ -29,6 +29,15 @@ export class AbecedarioComponent {
   // Gestores de eventos
   //------------------------------------------------------------------
 
+  
+  onOrdenSeleccionado(criterio: {campo: string, orden: string}) {
+    this.cargarPeliculasConOrden(criterio.campo, criterio.orden);
+  }
+
+  cargarPeliculasConOrden(campo: string, orden: string): void {
+    this.peliculasService.ordenarPeliculas(campo, orden)
+      .subscribe(peliculas => this.peliculas = peliculas);
+  }
   /**
     *  Método a invocar para lanzar la búsqueda 
     */   

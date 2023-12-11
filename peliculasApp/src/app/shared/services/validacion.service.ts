@@ -16,7 +16,8 @@ export class ValidacionService {
   private mensajesError : any = {
     noEmpiezaMayuscula: "El valor debe comenzar por mayúscula",
     required: "Campo requerido",
-    iguales: "Campos iguales"
+    iguales: "Campos iguales",
+    anoInvalido: "El campo año no puede tener más de 4 dígitos"
   }
 
   //---------------------------------------------------------------
@@ -35,25 +36,22 @@ export class ValidacionService {
   // Validaciones de campos
   //---------------------------------------------------------------
 
-  validarEmpiezaMayuscula(control: FormControl) : ValidationErrors | null {
-      
-    // Obtiene el valor en el control
-    const inicial : string = control.value?.trim()[0];     
- 
-    // Si el valor no pasa la validación, tenemos problemas
-    if(inicial && inicial != inicial.toUpperCase()) {
-      
-      // Rengo que devolver un objeto con el error
-      return {
-        // El atributo indica la validación que no se ha pasado
-        // Los campos tendrán estos errores por lo que se puede mostrar un mensaje
-        noEmpiezaMayuscula: true
-      }  
+  validarEmpiezaMayuscula(control: FormControl): ValidationErrors | null {
+    const inicial = control.value?.trim()[0];
+    if (inicial && inicial !== inicial.toUpperCase()) {
+      return { noEmpiezaMayuscula: true };
     }
-
-    // Null implica que todo OK. Nada que notificar
     return null;
-  }  
+  }
+
+  validarAnoCuatroDigitos(control: FormControl): ValidationErrors | null {
+    const valor = control.value;
+    if (valor !== null && valor !== undefined && !/^\d{4}$/.test(valor.toString())) {
+      return { anoInvalido: true };
+    }
+    return null;
+  }
+  
 
   //---------------------------------------------------------------
   // Validaciones de formularios
@@ -90,8 +88,5 @@ export class ValidacionService {
 
       return null;
     }
-}
-
-
-
+  }
 }

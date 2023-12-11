@@ -1,9 +1,9 @@
 <div class="container-fluid">
     <div class="row" style="margin-top: 25px;">
         <div class="col-md-6">
-            <app-select></app-select>
+            <app-select (ordenSeleccionado)="onOrdenSeleccionado($event)"></app-select>
         </div>
-        <div class="col-md-6 d-flex justify-content-end">
+        <div class="d-flex justify-content-end">
             <!-- Botón para hacer las altas -->
             <button type="button" class="btn btn-dark text-white mb-1" routerLink="../agregar">
                 <i class="bi bi-plus-lg text-white"></i>
