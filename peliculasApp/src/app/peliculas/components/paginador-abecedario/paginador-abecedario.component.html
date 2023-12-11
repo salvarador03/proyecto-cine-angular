@@ -1,0 +1,8 @@
+<nav aria-label="paginadorPorLetras">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" *ngFor="let letra of abecedario">
+        <a class="page-link letra" (click)="seleccionarLetra($event, letra)" [attr.data-letra]="letra" href="#">{{ letra }}</a> <!--En vez de data-letra solo pongo [attr.data-letra] para que funcione, no me deja de otra forma https://stackoverflow.com/questions/34542619/how-can-i-write-data-attributes-using-angular-->
+      </li>
+    </ul>
+  </nav>
+  

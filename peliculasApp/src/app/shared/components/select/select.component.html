@@ -1,0 +1,16 @@
+<!-- Select -->
+<select id="selectOrder" class="form-select mb-2" [(ngModel)]="selectedOrder">
+    <option value="id">Id</option>
+    <option value="titulo">Título</option>
+    <option value="genero">Género</option>
+    <option value="precio">Precio</option>
+    <option value="descuento">Descuento</option>
+    <option value="ano">Año</option>
+    <option value="director">Director</option>
+</select>
+
+<!-- Botones para ordenar -->
+<div class="d-flex mb-2">
+    <button (click)="cambiarOrden('asc')" class="btn btn-secondary">Ordenar <em>(ASC)</em></button>
+    <button (click)="cambiarOrden('desc')" class="btn btn-secondary">Ordenar <em>(DESC)</em></button>
+</div>

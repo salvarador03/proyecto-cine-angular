@@ -1,0 +1,84 @@
+<form (ngSubmit)="guardar()" [formGroup]="formulario" class="container mt-4" autocomplete="off">
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título</label>
+                <input formControlName="titulo" type="text" id="titulo" class="form-control">
+                <div *ngIf="esCampoNoValido('titulo')" class="invalid-feedback d-block">
+                    {{ mensajeErrorCampo('titulo') }}
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="genero" class="form-label">Género</label>
+                <input formControlName="genero" type="text" id="genero" class="form-control">
+                <div *ngIf="esCampoNoValido('genero')" class="invalid-feedback d-block">
+                    {{ mensajeErrorCampo('genero') }}
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="ano" class="form-label">Año</label>
+                <input formControlName="ano" type="number" id="ano" class="form-control">
+                <div *ngIf="esCampoNoValido('ano')" class="invalid-feedback d-block">
+                    {{ mensajeErrorCampo('ano') }}
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="director" class="form-label">Director</label>
+                <input formControlName="director" type="text" id="director" class="form-control">
+                <div *ngIf="esCampoNoValido('director')" class="invalid-feedback d-block">
+                    {{ mensajeErrorCampo('director') }}
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea formControlName="descripcion" id="descripcion" class="form-control"></textarea>
+                <div *ngIf="esCampoNoValido('descripcion')" class="invalid-feedback d-block">
+                    {{ mensajeErrorCampo('descripcion') }}
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="precio" class="form-label">Precio (€)</label>
+                <input formControlName="precio" type="number" id="precio" class="form-control">
+                <div *ngIf="esCampoNoValido('precio')" class="invalid-feedback d-block">
+                    {{ mensajeErrorCampo('precio') }}
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="descuento" class="form-label">Descuento (%)</label>
+                <input formControlName="descuento" type="number" id="descuento" class="form-control">
+                <div *ngIf="esCampoNoValido('descuento')" class="invalid-feedback d-block">
+                    {{ mensajeErrorCampo('descuento') }}
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="btn btn-primary me-2" routerLink="/peliculas/abecedario">Volver</button>
+                    <button class="btn btn-warning" type="submit" [disabled]="formulario.pending">Guardar</button>
+                </div>
+            </div>            
+        </div>
+    </div>
+</form>
+
+
+<!--
+<div>
+    <p>Formulario Válido: {{ formulario.valid }}</p>
+    <p>Errores del Formulario: {{ formulario.errors | json }}</p>
+    <p>Errores Título: {{ formulario.controls['titulo'].errors | json }}</p>
+    <p>Errores Género: {{ formulario.controls['genero'].errors | json }}</p>
+    <p>Errores Año: {{ formulario.controls['ano'].errors | json }}</p>
+    <p>Errores Director: {{ formulario.controls['director'].errors | json }}</p>
+    <p>Errores Descripción: {{ formulario.controls['descripcion'].errors | json }}</p>
+    <p>Errores Precio: {{ formulario.controls['precio'].errors | json }}</p>
+    <p>Errores Descuento: {{ formulario.controls['descuento'].errors | json }}</p>
+    <p>Valores del Formulario (JSON): {{ formulario.getRawValue() | json }}</p>
+</div>
+-->

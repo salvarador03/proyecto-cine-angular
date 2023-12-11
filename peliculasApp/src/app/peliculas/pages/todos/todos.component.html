@@ -1,0 +1,24 @@
+<div class="row" style="margin-top: 25px;">
+    <div class="col mb-1">
+
+        <!-- Filtro de búsquedas -->
+        <app-filtro-busqueda 
+            placeholder="Introduce el término de búsqueda"
+            (onBusquedaEjecutada)="buscar($event)">
+        </app-filtro-busqueda>
+    </div>
+
+    <!-- Botón para hacer las altas -->
+    <button type="button" class="btn btn-dark col-md-2 text-white mb-1" routerLink="../agregar">
+        <i class="bi bi-plus-lg text-white"></i>
+    </button>                                
+</div>   
+
+<!-- 
+    Tabla con los resultados.
+ -->
+<app-tabla-peliculas [peliculas]="peliculas" (onBorrar)="borrarPelicula($event)"></app-tabla-peliculas>
+
+<app-paginador-numerico (paginaSeleccionada)="manejarPaginaSeleccionada($event)"></app-paginador-numerico>
+
+

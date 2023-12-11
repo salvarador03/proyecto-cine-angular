@@ -1,0 +1,29 @@
+<div class="container py-4">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
+                <div class="col" *ngFor="let pelicula of peliculas">
+                    <div class="card h-100">
+                        <!-- Placeholder gráfico en lugar de imagen -->
+                        <div class="card-img-top bg-secondary text-white text-center d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <div>
+                                <i class="bi bi-film" style="font-size: 3rem;"></i>
+                                <h5 class="mt-2">{{ pelicula.titulo }}</h5>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Género: {{ pelicula.genero }}</p>
+                            <p class="card-text">Director: {{ pelicula.director }}</p>
+                            <p class="card-text">Año: {{ pelicula.ano }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Precio: {{ pelicula.precio }}€</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

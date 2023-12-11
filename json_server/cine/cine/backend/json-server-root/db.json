@@ -1,0 +1,227 @@
+{
+  "peliculas": [
+    {
+      "id": 1,
+      "titulo": "Origen",
+      "genero": "Accion y Misterio",
+      "ano": 2004,
+      "director": "Chrispher Nolan",
+      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "precio": "7",
+      "descuento": 13
+    },
+    {
+      "id": 2,
+      "titulo": "Interestellar",
+      "genero": "Misterio, Ciencia y Ficción",
+      "ano": "2002",
+      "director": "Chrispher Nolan",
+      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "precio": 13,
+      "descuento": 13
+    },
+    {
+      "titulo": "Spiderman 2",
+      "genero": "Acción",
+      "ano": "2004",
+      "director": "Stan Lee",
+      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "precio": "20",
+      "descuento": "10",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "titulo": "The Creator",
+      "genero": "Ciencia/Ficción",
+      "ano": "2023",
+      "director": "Gareth Edwards",
+      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "precio": "13",
+      "descuento": "33"
+    },
+    {
+      "id": 5,
+      "titulo": "Star Wars",
+      "genero": "Ciencia ficción",
+      "ano": 1977,
+      "director": "George Lucas",
+      "descripcion": "Star Wars, conocida también en español como La guerra de las galaxias, ​​​ es una franquicia y universo compartido de fantasía compuesta primordialmente de una serie de películas concebidas.",
+      "precio": 15,
+      "descuento": 9
+    },
+    {
+      "id": 6,
+      "titulo": "El Laberinto del Fauno",
+      "genero": "Fantasía, Drama",
+      "ano": 2006,
+      "director": "Guillermo del Toro",
+      "descripcion": "En la posguerra española, una niña se sumerge en un mundo fantástico y oscuro para escapar de su realidad opresiva.",
+      "precio": 10,
+      "descuento": 15
+    },
+    {
+      "id": 7,
+      "titulo": "La Vida es Bella",
+      "genero": "Drama, Comedia",
+      "ano": 1997,
+      "director": "Roberto Benigni",
+      "descripcion": "Un padre utiliza su ingenio y optimismo para proteger a su hijo del horror de un campo de concentración nazi.",
+      "precio": 12,
+      "descuento": 10
+    },
+    {
+      "id": 8,
+      "titulo": "Amélie",
+      "genero": "Comedia, Romance",
+      "ano": 2001,
+      "director": "Jean-Pierre Jeunet",
+      "descripcion": "Una joven parisina con una imaginación desbordante decide cambiar la vida de aquellos que la rodean para bien.",
+      "precio": 11,
+      "descuento": 20
+    },
+    {
+      "id": 9,
+      "titulo": "El Gran Hotel Budapest",
+      "genero": "Comedia, Aventura",
+      "ano": 2014,
+      "director": "Wes Anderson",
+      "descripcion": "La historia de un legendario conserje en un famoso hotel europeo y su amistad con un joven empleado.",
+      "precio": 14,
+      "descuento": 5
+    },
+    {
+      "id": 10,
+      "titulo": "Inception",
+      "genero": "Ciencia Ficción, Acción",
+      "ano": 2010,
+      "director": "Christopher Nolan",
+      "descripcion": "Un ladrón con la habilidad de entrar en los sueños de las personas debe realizar su tarea más difícil.",
+      "precio": 16,
+      "descuento": 10
+    },
+    {
+      "id": 11,
+      "titulo": "Blade Runner 2049",
+      "genero": "Ciencia Ficción, Drama",
+      "ano": 2017,
+      "director": "Denis Villeneuve",
+      "descripcion": "Un nuevo blade runner descubre un secreto largo tiempo oculto que podría sumir lo que queda de la sociedad en el caos.",
+      "precio": 18,
+      "descuento": 12
+    },
+    {
+      "id": 12,
+      "titulo": "El Padrino",
+      "genero": "Crimen, Drama",
+      "ano": 1972,
+      "director": "Francis Ford Coppola",
+      "descripcion": "La historia del ascenso y caída de la familia Corleone en el mundo del crimen organizado.",
+      "precio": 20,
+      "descuento": 10
+    },
+    {
+      "id": 13,
+      "titulo": "Moonlight",
+      "genero": "Drama",
+      "ano": 2016,
+      "director": "Barry Jenkins",
+      "descripcion": "Una crónica de la vida de un joven negro mientras lucha por encontrar su lugar en el mundo mientras crece en un barrio difícil de Miami.",
+      "precio": 15,
+      "descuento": 15
+    },
+    {
+      "id": 14,
+      "titulo": "Parásitos",
+      "genero": "Suspense, Drama",
+      "ano": 2019,
+      "director": "Bong Joon-ho",
+      "descripcion": "Una familia pobre se infiltra en la vida de una familia rica, desencadenando una serie de eventos inesperados.",
+      "precio": 17,
+      "descuento": 20
+    },
+    {
+      "id": 15,
+      "titulo": "Whiplash",
+      "genero": "Drama, Música",
+      "ano": 2014,
+      "director": "Damien Chazelle",
+      "descripcion": "Un joven baterista ambicioso comienza a asistir a una escuela de música de élite donde su sueño de grandeza es mentorizado por un instructor que no se detendrá ante nada para realizar su potencial.",
+      "precio": 13,
+      "descuento": 10
+    },
+    {
+      "id": 16,
+      "titulo": "Gladiador",
+      "genero": "Acción, Drama",
+      "ano": 2000,
+      "director": "Ridley Scott",
+      "descripcion": "En la Roma antigua, un general traicionado se convierte en gladiador y lucha por vengar la muerte de su familia y su emperador.",
+      "precio": 19,
+      "descuento": 5
+    },
+    {
+      "id": 17,
+      "titulo": "La La Land",
+      "genero": "Romance, Musical",
+      "ano": 2016,
+      "director": "Damien Chazelle",
+      "descripcion": "Un músico de jazz y una aspirante a actriz se enamoran mientras luchan por conseguir sus sueños en Los Ángeles.",
+      "precio": 14,
+      "descuento": 10
+    },
+    {
+      "id": 18,
+      "titulo": "Mad Max: Furia en la Carretera",
+      "genero": "Acción, Ciencia Ficción",
+      "ano": 2015,
+      "director": "George Miller",
+      "descripcion": "En un desierto post-apocalíptico, Max se une a Furiosa para huir de un tirano y su ejército en una intensa persecución por carretera.",
+      "precio": 20,
+      "descuento": 15
+    },
+    {
+      "id": 19,
+      "titulo": "Arrival",
+      "genero": "Ciencia Ficción, Drama",
+      "ano": 2016,
+      "director": "Denis Villeneuve",
+      "descripcion": "Una experta en lingüística es contratada por el ejército para comunicarse con extraterrestres que han aterrizado en la Tierra.",
+      "precio": 16,
+      "descuento": 10
+    },
+    {
+      "id": 20,
+      "titulo": "El Secreto de sus Ojos",
+      "genero": "Misterio, Drama",
+      "ano": 2009,
+      "director": "Juan José Campanella",
+      "descripcion": "Un oficial de justicia retirado escribe una novela con la esperanza de encontrar el cierre para uno de sus casos no resueltos y su amor no correspondido.",
+      "precio": 14,
+      "descuento": 20
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$nFcHQ0qAFexeMJxWF2nKtuE3xC7/Cy6LL2ZTbk.PQ.1oFcjdYsXoG",
+      "nombre": "Sergio",
+      "apellidos": "Alvarado Ramos",
+      "id": 1
+    },
+    {
+      "email": "sergio@gmail.com",
+      "password": "$2a$10$WWF.nUi2ap8NtmaFUCd2TOX/YgUzOHrDMfSoDI/hkmMLw0UR87TKy",
+      "nombre": "Sergio",
+      "apellidos": "Alvarado Ramos",
+      "id": 2
+    },
+    {
+      "email": "1234@gmail.com",
+      "password": "$2a$10$rz86iIll0Pa9yLXbKERWvOj4PUvdKR55wUqImnNu6F3Ec4MVeRJMi",
+      "nombre": "Sergio",
+      "apellidos": "Alvarado Ramos",
+      "id": 3
+    }
+  ]
+}

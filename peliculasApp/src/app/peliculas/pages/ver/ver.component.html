@@ -1,0 +1,53 @@
+<style>
+    input {
+        background-color: rgb(255, 255, 198);
+    }
+    input:hover {
+        background-color: rgb(255, 255, 198);
+    }
+</style>
+<!-- Modal para ver detalles de la película -->
+<div class="modal fade" id="verPeliculaModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Detalles de la Película</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Contenido del formulario de detalles de la película -->
+                <div class="container mt-3">
+                    <form>
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Título:</label>
+                            <input type="text" class="form-control" id="titulo" value="{{pelicula.titulo}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genero" class="form-label">Género:</label>
+                            <input type="text" class="form-control" id="genero" value="{{pelicula.genero}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="ano" class="form-label">Año:</label>
+                            <input type="number" class="form-control" id="ano" value="{{pelicula.ano}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="director" class="form-label">Director:</label>
+                            <input type="text" class="form-control" id="director" value="{{pelicula.director}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio (€):</label>
+                            <input type="number" class="form-control" id="precio" value="{{pelicula.precio}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descuento" class="form-label">Descuento (%):</label>
+                            <input type="number" class="form-control" id="descuento" value="{{pelicula.descuento}}" readonly> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
